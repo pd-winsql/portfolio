@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+    border: 0 solid #e5e7eb;
+}
+
+body{
+    display: flex;                /* center child horizontally & vertically */
+    /*align-items: center;*/
+    justify-content: center;
+    min-height: 100vh;            /* ensure full-viewport vertical centering */
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: aliceblue;
+    padding: 40px;                /* valid syntax (adjust as needed) */
+}
+
+.parent-container {
+    display: flex;
+    /* remove forcing full viewport height here (body handles vertical centering) */
+    max-width: 800px;  
+    flex-direction: column;           /* wider usable max width */
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding: 24px;
+}
+
+.img-hero {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: .5px solid #cbd5e1;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.hero-location {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 8px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #334155;
+}
+
+h4 {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #475569;
+}
+
+p {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #475569;
+    line-height: 1.4;
+}
+
+section {
+    margin: 10px
+}
+
+.about-me{
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    max-width: 500px;
+    border: .5px solid #cbd5e1;
+}
+
+.about-me-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.techstack{
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    max-width: 500px;
+    border: .5px solid #cbd5e1;
+}
+
+.techstack-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+ul {
+    padding-left: 20px;
+    color: #334155;
+    display: flex;
+    gap: 10px;
+}
+
+li {
+    font-size: .8rem;
+    list-style: none;
+    padding: 3px 9px;
+    border: .5px solid #cbd5e1;
+    border-radius: 7px;
+}
