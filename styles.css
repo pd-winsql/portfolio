@@ -16,10 +16,9 @@ body{
 
 .parent-container {
     display: flex;
-    /* remove forcing full viewport height here (body handles vertical centering) */
     max-width: 800px;  
-    flex-direction: column;           /* wider usable max width */
-    width: 100%;
+    flex-direction: column;
+    gap: 1vb;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -98,20 +97,24 @@ p {
     line-height: 1.4;
 }
 
-section {
-    margin: 7px
-}
-
 .sub-container {
     display: flex;
     flex-direction: row;
+    gap: 1vb;
+    max-width: 100%;
+}
+
+.left-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vb;
 }
 
 .about-me{
     padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;
-    width: 400px;
     height: 125px;
     border: .5px solid #cbd5e1;
 }
@@ -164,8 +167,7 @@ li:hover {
     padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;
-    width: 350px;
-    height: 450px;
+    max-width: 100%;
     border: .5px solid #cbd5e1;
 }
 
@@ -193,7 +195,9 @@ li:hover {
 .bottom-part {
     display: flex;
     flex-direction: row;
-    /*height: 200px;*/
+    justify-items: center;
+    gap: 1vb;
+    width: 100%;
 }
 
 .projects {
@@ -301,4 +305,53 @@ li:hover {
     height: 100vh;
     overflow: hidden;
     touch-action: none;
+}
+
+.about-me,
+.techstack,
+.certifications,
+.projects,
+.socials {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* 📱 Mobile (<= 768px) */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sub-container, .bottom-part {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-me, .techstack, .certifications, .projects, .socials {
+        width: 90%;
+        max-width: 500px;
+        margin: 10px 0;
+    }
+
+    body {
+        padding: 10px;
+    }
+
+    .img-hero {
+        width: 100px;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.85rem;
+    }
 }
