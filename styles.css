@@ -109,13 +109,14 @@ p {
     flex-direction: column;
     align-items: center;
     gap: 1vb;
+    flex:2;
 }
 
 .about-me{
     padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;
-    height: 125px;
+    height: auto;
     border: .5px solid #cbd5e1;
 }
 
@@ -169,6 +170,7 @@ li:hover {
     border-radius: 8px;
     max-width: 100%;
     border: .5px solid #cbd5e1;
+    flex:1;
 }
 
 .certifications-container {
@@ -179,17 +181,18 @@ li:hover {
 
 .title-desc-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     background-color: #ececec;
     padding: 10px;
-    /*border: .5px solid #cbd5e1;*/
     border-radius: 10px;
 }
 
 .title-desc-container:hover {
     transition: 150ms;
     background-color: #dbdce3;
-    cursor: pointer;
+    cursor: default;
 }
 
 .bottom-part {
@@ -204,13 +207,14 @@ li:hover {
     padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;
-    width: 500px;
     border: .5px solid #cbd5e1;
+    flex: 1.5;
 }
 
 .projects-container {
     display: flex;
     flex-direction: column;
+    max-width: 100%;
     gap: 16px;
 }
 
@@ -224,8 +228,8 @@ li:hover {
     padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;
-    width: 250px;
     border: .5px solid #cbd5e1;
+    flex:.5;
 }
 
 .socials ul {
@@ -239,6 +243,10 @@ li:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.title-desc-container div:last-child {
+    padding: 0 20px;
 }
 
 .footer {
@@ -355,3 +363,4 @@ li:hover {
         font-size: 0.85rem;
     }
 }
+
