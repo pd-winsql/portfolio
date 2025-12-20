@@ -16,12 +16,12 @@
                 </div>
                 <div class="hero-text">
                     <div class="hero-name"><h1>Winjemelron Corpuz</h1></div>
-                    <div class="hero-location">
-                        <img width="20" height="19" src="https://img.icons8.com/ios/50/marker--v1.png" alt="marker--v1"/>
-                        <h3>Alcala, Cagayan</h3>
-                    </div>
-                    <div class="hero-course">
-                        <h4>BS in Information Systems</h4>
+                    <div class="hero-details">
+                        <div class="hero-location">
+                            <img width="18" height="17" src="https://img.icons8.com/ios/50/marker--v1.png" alt="marker--v1"/>
+                            <h4>Alcala, Cagayan</h4>
+                        </div>
+                        <h4>3rd Year BS in Information Systems | Associate Data Analyst (SQL)</h4>
                     </div>
                 </div>
             </div>
@@ -81,7 +81,7 @@
                 <div class="socials-container">
                     <h2>Socials</h2>
                     <ul>
-                        <li><a href="https://www.instagram.com/win_saito/" target="_blank"><img width="35" height="35" src="https://img.icons8.com/windows/32/instagram-new.png" alt="instagram-new"/></a></li>
+                        <li><a href="https://www.instagram.com/win.ter.melon/" target="_blank"><img width="35" height="35" src="https://img.icons8.com/windows/32/instagram-new.png" alt="instagram-new"/></a></li>
                         <li><a href="https://www.facebook.com/winsql" target="_blank"><img width="32" height="32" src="https://img.icons8.com/ios/50/facebook-new.png" alt="facebook-new"/></a></li>
                         <li><a href="https://www.linkedin.com/in/winsight" target="_blank"><img width="32" height="32" src="https://img.icons8.com/windows/32/linkedin.png" alt="linkedin"/></a></li>
                         <li><a href="https://github.com/pd-winsql" target="_blank"><img width="32" height="32" src="https://img.icons8.com/material-rounded/24/github.png" alt="github"/></a></li>
@@ -121,6 +121,41 @@
             <button class="modal-btn">Get Started</button>
         </div>
     </div>
+
+    <!-- count particles -->
+    <div class="count-particles">
+        <span class="js-count-particles">--</span> particles
+    </div>
+
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
+
+    <!-- particles.js library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- app that loads assets/particles.json -->
+    <script src="app.js"></script>
+
+    <!-- stats.js (optional) -->
+    <script src="https://mrdoob.github.io/stats.js/build/stats.min.js"></script>
+    <script>
+        var count_particles, stats, update;
+        stats = new Stats();
+        stats.setMode(0);
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.left = '0px';
+        stats.domElement.style.top = '0px';
+        document.body.appendChild(stats.domElement);
+        count_particles = document.querySelector('.js-count-particles');
+        update = function() {
+            stats.begin();
+            stats.end();
+            if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS && window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+                count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+            }
+            requestAnimationFrame(update);
+        };
+        requestAnimationFrame(update);
+    </script>
 
     <script src="script.js"></script>
 </body>

@@ -10,7 +10,7 @@ body{
     min-height: 100vh;            /* ensure full-viewport vertical centering */
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: aliceblue;
+    background-color: #f0f8ff;
     padding: 40px;                /* valid syntax (adjust as needed) */
 }
 
@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .img-hero {
-    border-radius: 50%;
+    border-radius: 15%;
     width: 120px;
     height: 120px;
     object-fit: cover;
@@ -45,13 +45,21 @@ h1, h2, h3, h4, h5, h6, p {
 .hero-text {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 20px;
+    
 }
-.hero-location {
+.hero-details {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 5px;
     margin-bottom: 8px;
+}
+
+.hero-location {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
 }
 
 h1 {
@@ -362,5 +370,76 @@ li:hover {
     p {
         font-size: 0.85rem;
     }
+}
+
+.about-me, .techstack, .certifications, .projects, .socials {
+    background-color: rgba(255, 255, 255, 0.62); /* translucent white */
+    backdrop-filter: blur(5px); /* blur the background behind each card */
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    border: .5px solid rgba(230, 233, 238, 0.6);
+    border-radius: 8px;
+}
+
+canvas {
+    display: block;
+}
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff; /* changed from red to white */
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: 0; /* sit behind content */
+    pointer-events: none; /* allow clicks through the particles layer */
+}
+
+/* ensure main content is above the particles layer */
+.parent-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---- stats.js ---- */
+
+.count-particles{
+    background: #000022;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 80px;
+    color: #13E8E9;
+    font-size: .8em;
+    text-align: left;
+    text-indent: 4px;
+    line-height: 14px;
+    padding-bottom: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.js-count-particles{
+    font-size: 1.1em;
+}
+
+#stats,
+.count-particles{
+    -webkit-user-select: none;
+}
+
+#stats{
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+}
+
+.count-particles{
+    border-radius: 0 0 3px 3px;
 }
 
