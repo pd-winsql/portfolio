@@ -69,7 +69,7 @@
                                 <h6>DataCamp</h6>
                             </div>
                             <div>
-                                <a href="https://www.datacamp.com/certificate/DAA0010251773990" target="_blank"><img width="20" height="20" src="https://img.icons8.com/material-outlined/96/link--v1.png" alt="link--v1"/> </a>                                
+                                <a href="https://www.datacamp.com/certificate/DAA0010251773990" target="_blank" rel="noopener noreferrer"><img width="20" height="20" src="https://img.icons8.com/material-outlined/96/link--v1.png" alt="Datacamp certificate link" loading="lazy"/> </a>                                
                             </div>
                         </div>
                     </div>
@@ -81,10 +81,10 @@
                 <div class="socials-container">
                     <h2>Socials</h2>
                     <ul>
-                        <li><a href="https://www.instagram.com/win.ter.melon/" target="_blank"><img width="35" height="35" src="https://img.icons8.com/windows/32/instagram-new.png" alt="instagram-new"/></a></li>
-                        <li><a href="https://www.facebook.com/winsql" target="_blank"><img width="32" height="32" src="https://img.icons8.com/ios/50/facebook-new.png" alt="facebook-new"/></a></li>
-                        <li><a href="https://www.linkedin.com/in/winsight" target="_blank"><img width="32" height="32" src="https://img.icons8.com/windows/32/linkedin.png" alt="linkedin"/></a></li>
-                        <li><a href="https://github.com/pd-winsql" target="_blank"><img width="32" height="32" src="https://img.icons8.com/material-rounded/24/github.png" alt="github"/></a></li>
+                        <li><a href="https://www.instagram.com/win.ter.melon/" target="_blank" rel="noopener noreferrer"><img width="35" height="35" src="https://img.icons8.com/windows/32/instagram-new.png" alt="Instagram profile" loading="lazy"/></a></li>
+                        <li><a href="https://www.facebook.com/winsql" target="_blank" rel="noopener noreferrer"><img width="32" height="32" src="https://img.icons8.com/ios/50/facebook-new.png" alt="Facebook profile" loading="lazy"/></a></li>
+                        <li><a href="https://www.linkedin.com/in/winsight" target="_blank" rel="noopener noreferrer"><img width="32" height="32" src="https://img.icons8.com/windows/32/linkedin.png" alt="LinkedIn profile" loading="lazy"/></a></li>
+                        <li><a href="https://github.com/pd-winsql" target="_blank" rel="noopener noreferrer"><img width="32" height="32" src="https://img.icons8.com/material-rounded/24/github.png" alt="GitHub profile" loading="lazy"/></a></li>
                     </ul>
                 </div>
             </section>
@@ -98,7 +98,7 @@
                                 <h6>EDA Data Analysis showcasing my skills in data analysis using postgreSQL and powerBI</h6>
                             </div>
                             <div>
-                                <a href="https://github.com/pd-winsql/sales-perf-and-cohort-analysis" target="_blank"><img width="20" height="20" src="https://img.icons8.com/material-outlined/96/link--v1.png" alt="link--v1"/> </a>
+                                <a href="https://github.com/pd-winsql/sales-perf-and-cohort-analysis" target="_blank" rel="noopener noreferrer"><img width="20" height="20" src="https://img.icons8.com/material-outlined/96/link--v1.png" alt="Project repo link" loading="lazy"/> </a>
                             </div>
                         </div>
                     </div>
@@ -108,9 +108,9 @@
         <hr class="footer-divider">
         
         <section class="footer">
-            <div class="footer-container">
-                <p>© <script type = "text/javascript">document.write(new Date().getFullYear());</script> Winjemelron Corpuz. All rights reserved.</p>
-            </div>
+                <div class="footer-container">
+                    <p>© <span id="year"></span> Winjemelron Corpuz. All rights reserved.</p>
+                </div>
         </section>
     </div>
 
@@ -133,30 +133,11 @@
     <!-- particles.js library -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <!-- app that loads assets/particles.json -->
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
 
     <!-- stats.js (optional) -->
     <script src="https://mrdoob.github.io/stats.js/build/stats.min.js"></script>
-    <script>
-        var count_particles, stats, update;
-        stats = new Stats();
-        stats.setMode(0);
-        stats.domElement.style.position = 'absolute';
-        stats.domElement.style.left = '0px';
-        stats.domElement.style.top = '0px';
-        document.body.appendChild(stats.domElement);
-        count_particles = document.querySelector('.js-count-particles');
-        update = function() {
-            stats.begin();
-            stats.end();
-            if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS && window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-                count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-            }
-            requestAnimationFrame(update);
-        };
-        requestAnimationFrame(update);
-    </script>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
