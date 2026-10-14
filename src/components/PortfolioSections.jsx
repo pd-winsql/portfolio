@@ -17,13 +17,20 @@ export function Navigation() {
 }
 
 export function Hero() {
+  const [portraitFailed, setPortraitFailed] = useState(false);
   return (
     <section className="hero" id="home" aria-labelledby="name-heading">
-      <p className="hero-location">{profile.location}, Philippines</p>
-      <h1 id="name-heading">Winjemelron<br /><span>Corpuz</span><span className="name-period">.</span></h1>
-      <div className="hero-bottom">
-        <p>I’m an Information Systems student exploring data through <strong>PostgreSQL</strong> and <strong>Power BI</strong>.</p>
-        <a className="primary-link" href="#work">View my work <span aria-hidden="true">↓</span></a>
+      {!portraitFailed && <img className="hero-portrait" src={profile.portrait} alt={`Portrait of ${profile.name}`} width="128" height="160" fetchPriority="high" onError={() => setPortraitFailed(true)} />}
+      <div className="hero-text">
+        <h1 id="name-heading">{profile.name}</h1>
+        <div className="hero-details">
+          <p>{profile.location}, Philippines</p>
+          <p>{profile.education}</p>
+        </div>
+        <div className="hero-bottom">
+          <p>I’m exploring data through <strong>PostgreSQL</strong> and <strong>Power BI</strong>.</p>
+          <a className="primary-link" href="#work">View my work <span aria-hidden="true">↓</span></a>
+        </div>
       </div>
     </section>
   );
@@ -60,17 +67,12 @@ export function Projects() {
 }
 
 export function About() {
-  const [portraitFailed, setPortraitFailed] = useState(false);
   return (
     <div className="about-content">
       <h2 id="about-heading">A little about me</h2>
       <p className="about-lead">Curiosity, in and<br />outside the data.</p>
       <p>I’m a fourth-year Information Systems student developing my skills in data analysis and visualization. I enjoy working through raw data and finding patterns that help explain it.</p>
       <p>Away from my projects, I write poems, spend time with friends and family, and serve God Jehovah.</p>
-      <div className="portrait-row">
-        {!portraitFailed && <img src={profile.portrait} alt={`Portrait of ${profile.name}`} width="88" height="110" loading="lazy" onError={() => setPortraitFailed(true)} />}
-        <div><span className="portrait-name">Win Corpuz</span><span>{profile.education}</span><span>{profile.location}</span></div>
-      </div>
     </div>
   );
 }
