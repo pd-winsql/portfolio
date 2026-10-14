@@ -8,7 +8,9 @@ function ExternalLink({ href, children, className = '' }) {
 export function Navigation() {
   return (
     <header className="site-header">
-      <a className="wordmark" href="#home" aria-label="Win Corpuz, back to introduction">Win Corpuz<span aria-hidden="true">.</span></a>
+      <a className="wordmark" href="#home" aria-label="Win Corpuz, back to introduction">
+        <img src={`${import.meta.env.BASE_URL}assets/win-corpuz-logo-v2.png`} alt="Win Corpuz" width="192" height="64" />
+      </a>
       <nav aria-label="Main navigation">
         <a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a>
       </nav>

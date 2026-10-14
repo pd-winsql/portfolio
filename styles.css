@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
 
 :root {
   --paper: #f7f5f0;
@@ -24,8 +24,8 @@ img { max-width: 100%; display: block; }
 .skip-link { position: fixed; left: 24px; top: -100px; padding: 12px 20px; background: var(--paper); z-index: 5; border: 2px solid var(--accent); }
 .skip-link:focus { top: 12px; }
 .site-header { display: flex; align-items: center; justify-content: space-between; padding-block: 26px; border-bottom: 1px solid var(--rule); gap: 12px; }
-.wordmark { font-family: 'Manrope', var(--sans); font-weight: 700; font-size: 1.1rem; letter-spacing: -.05em; white-space: nowrap; }
-.wordmark span { color: var(--accent); }
+.wordmark { display: inline-flex; align-items: center; min-height: 44px; flex-shrink: 0; }
+.wordmark img { width: 144px; height: auto; }
 .site-header nav { display: flex; gap: clamp(12px, 3vw, 34px); }
 .site-header nav a { font-size: .88rem; display: inline-flex; align-items: center; min-height: 44px; }
 .hero { padding-block: clamp(40px, 5vw, 64px); display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; animation: arrive .7s ease-out both; }
@@ -73,6 +73,7 @@ a:hover .external-mark { transform: translate(2px, -2px); }
 .site-footer a { display: inline-flex; align-items: center; min-height: 44px; }
 @keyframes arrive { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 @media (min-width: 620px) {
+  .wordmark img { width: 192px; }
   .page-shell { width: min(1120px, calc(100% - 80px)); }
   .hero { flex-direction: row; text-align: left; gap: 28px; }
   .hero-portrait { width: 160px; height: 200px; }
@@ -89,7 +90,7 @@ a:hover .external-mark { transform: translate(2px, -2px); }
 @media (max-width: 359px) {
   .page-shell { width: calc(100% - 32px); }
   .site-header nav { gap: 10px; }
-  .wordmark { font-size: 1rem; }
+  .wordmark img { width: 128px; }
   .site-header nav a { font-size: .78rem; }
   .skills dl > div { grid-template-columns: 90px 1fr; }
 }
