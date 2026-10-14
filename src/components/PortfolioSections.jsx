@@ -20,7 +20,7 @@ export function Hero() {
   const [portraitFailed, setPortraitFailed] = useState(false);
   return (
     <section className="hero" id="home" aria-labelledby="name-heading">
-      {!portraitFailed && <img className="hero-portrait" src={profile.portrait} alt={`Portrait of ${profile.name}`} width="128" height="160" fetchPriority="high" onError={() => setPortraitFailed(true)} />}
+      {!portraitFailed && <img className="hero-portrait" src={profile.portrait} alt={`Portrait of ${profile.name}`} width="160" height="200" fetchPriority="high" onError={() => setPortraitFailed(true)} />}
       <div className="hero-text">
         <h1 id="name-heading">{profile.name}</h1>
         <div className="hero-details">
@@ -46,19 +46,6 @@ export function Projects() {
             <span className="project-number">{String(index + 1).padStart(2, '0')}</span>
             <div><h3>{project.title}</h3><p>{project.description}</p></div>
             <ExternalLink className="text-link" href={project.url}>View repository</ExternalLink>
-          </div>
-          <div className="project-study">
-            <div className="project-context">
-              <p className="small-label">Inside the analysis</p>
-              <h4>Following sales.<br />Understanding customers.</h4>
-              <p>SQL queries explore sales by region, monthly performance, and customer purchase cohorts. A Power BI report is included in the repository.</p>
-              <dl className="project-tools"><div><dt>Analysis</dt><dd>PostgreSQL</dd></div><div><dt>Visualization</dt><dd>Power BI</dd></div></dl>
-            </div>
-            <figure className="query-figure">
-              <figcaption><span>Monthly sales trend</span><span>SQL excerpt</span></figcaption>
-              <pre><code>{project.query}</code></pre>
-              <ExternalLink className="query-source" href={`${project.url}/blob/main/data_analysis.sql`}>Read the full analysis</ExternalLink>
-            </figure>
           </div>
         </article>
       ))}

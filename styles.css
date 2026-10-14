@@ -29,7 +29,7 @@ img { max-width: 100%; display: block; }
 .site-header nav { display: flex; gap: clamp(12px, 3vw, 34px); }
 .site-header nav a { font-size: .88rem; display: inline-flex; align-items: center; min-height: 44px; }
 .hero { padding-block: clamp(40px, 5vw, 64px); display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; animation: arrive .7s ease-out both; }
-.hero-portrait { width: 112px; height: 140px; object-fit: contain; object-position: center bottom; background: #e7e7de; border-radius: 8px; flex-shrink: 0; }
+.hero-portrait { width: 144px; height: 180px; object-fit: contain; object-position: center bottom; border: 1px solid var(--rule); border-radius: 10px; flex-shrink: 0; }
 .hero-text { min-width: 0; }
 h1 { font-family: var(--sans); font-weight: 600; font-size: clamp(1.5rem, 2.4vw, 1.85rem); line-height: 1.3; letter-spacing: -.035em; }
 .hero-details { margin-top: 10px; color: var(--muted); font-size: .88rem; }
@@ -50,16 +50,6 @@ h1 { font-family: var(--sans); font-weight: 600; font-size: clamp(1.5rem, 2.4vw,
 .text-link { grid-column: 2; width: fit-content; font-size: .88rem; min-height: 44px; display: inline-flex; align-items: center; text-decoration: underline; }
 .external-mark { margin-left: 9px; display: inline-block; transition: transform .18s ease; }
 a:hover .external-mark { transform: translate(2px, -2px); }
-.project-study { margin-top: 28px; background: var(--wash); padding: clamp(22px, 4vw, 48px); display: grid; gap: 36px; }
-.small-label { color: var(--muted); font-size: .8rem; margin-bottom: 22px; }
-.project-context h4 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 400; line-height: 1.2; letter-spacing: -.025em; }
-.project-context > p:not(.small-label) { margin-top: 18px; max-width: 380px; font-size: .9rem; color: var(--muted); }
-.project-tools { display: flex; gap: 35px; margin-top: 30px; font-size: .8rem; }
-.project-tools dt { color: var(--muted); margin-bottom: 3px; }
-.query-figure { min-width: 0; border-top: 1px solid #bdc6b6; }
-.query-figure figcaption { display: flex; justify-content: space-between; gap: 12px; font-size: .78rem; color: var(--muted); padding-top: 16px; }
-.query-figure pre { font-family: Consolas, 'Courier New', monospace; font-size: clamp(.75rem, 1vw, .8rem); line-height: 1.9; color: var(--accent); margin: 25px 0 16px; white-space: pre-wrap; overflow-wrap: anywhere; }
-.query-source { min-height: 44px; display: inline-flex; align-items: center; font-size: .8rem; text-decoration: underline; }
 .background-section { display: grid; gap: 46px; margin-block: clamp(60px, 9vw, 112px); }
 .about-lead { font-family: var(--serif); font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.18; letter-spacing: -.03em; margin-top: 24px; margin-bottom: 24px; }
 .about-content > p:not(.about-lead) { max-width: 440px; margin-top: 16px; color: var(--muted); font-size: .94rem; }
@@ -85,7 +75,7 @@ a:hover .external-mark { transform: translate(2px, -2px); }
 @media (min-width: 620px) {
   .page-shell { width: min(1120px, calc(100% - 80px)); }
   .hero { flex-direction: row; text-align: left; gap: 28px; }
-  .hero-portrait { width: 128px; height: 160px; }
+  .hero-portrait { width: 160px; height: 200px; }
   .hero-bottom { align-items: flex-start; }
   .site-footer { flex-direction: row; justify-content: space-between; align-items: center; }
   .contact-section { flex-direction: row; justify-content: space-between; align-items: center; }
@@ -93,8 +83,6 @@ a:hover .external-mark { transform: translate(2px, -2px); }
 @media (min-width: 940px) {
   .project-intro { grid-template-columns: 40px 1fr auto; gap: 18px; }
   .text-link { grid-column: auto; align-self: center; }
-  .project-study { grid-template-columns: .85fr 1.15fr; gap: 50px; }
-  .query-figure { align-self: center; }
   .background-section { grid-template-columns: 1.2fr 1fr; gap: 100px; }
   .background-details { padding-top: 4px; }
 }
@@ -103,7 +91,6 @@ a:hover .external-mark { transform: translate(2px, -2px); }
   .site-header nav { gap: 10px; }
   .wordmark { font-size: 1rem; }
   .site-header nav a { font-size: .78rem; }
-  .project-study { padding: 18px; }
   .skills dl > div { grid-template-columns: 90px 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {

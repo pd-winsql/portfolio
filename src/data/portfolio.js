@@ -24,14 +24,6 @@ export const projects = [
   {
     title: 'Sales Performance and Cohort Analysis',
     description: 'An exploratory analysis of retail sales and customer cohorts using PostgreSQL and Power BI.',
-    query: `SELECT
-    DATE_TRUNC('month', date)::date as month,
-    ROUND(SUM(sales_amount), 2) as total_sales,
-    ROUND(SUM(profit), 2) total_profit,
-    ROUND(SUM(profit)/SUM(sales_amount),2) as profit_margin
-FROM sales_fact
-GROUP BY month
-ORDER BY month;`,
     url: 'https://github.com/pd-winsql/sales-perf-and-cohort-analysis',
     linkLabel: 'Project repo link',
   },
