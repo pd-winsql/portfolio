@@ -7,9 +7,9 @@ export const profile = {
 };
 
 export const techStack = [
+  { category: 'Data', items: ['PostgreSQL', 'Power BI'] },
   { category: 'Frontend', items: ['React', 'Vite'] },
-  { category: 'Backend', items: ['PostgreSQL', 'PHP', 'C#', 'VB.Net'] },
-  { category: 'Data Visualization', items: ['Power BI'] },
+  { category: 'Development', items: ['PHP', 'C#', 'VB.Net'] },
 ];
 
 export const certifications = [
@@ -23,7 +23,15 @@ export const certifications = [
 export const projects = [
   {
     title: 'Sales Performance and Cohort Analysis',
-    description: 'EDA Data Analysis showcasing my skills in data analysis using postgreSQL and powerBI',
+    description: 'An exploratory analysis of retail sales and customer cohorts using PostgreSQL and Power BI.',
+    query: `SELECT
+    DATE_TRUNC('month', date)::date as month,
+    ROUND(SUM(sales_amount), 2) as total_sales,
+    ROUND(SUM(profit), 2) total_profit,
+    ROUND(SUM(profit)/SUM(sales_amount),2) as profit_margin
+FROM sales_fact
+GROUP BY month
+ORDER BY month;`,
     url: 'https://github.com/pd-winsql/sales-perf-and-cohort-analysis',
     linkLabel: 'Project repo link',
   },

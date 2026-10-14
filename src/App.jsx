@@ -1,21 +1,22 @@
-import { About, Certifications, Footer, Hero, Projects, Socials, TechStack } from './components/PortfolioSections.jsx';
-import ParticleBackground from './components/ParticleBackground.jsx';
+import { About, Certifications, Footer, Hero, Navigation, Projects, Socials, TechStack } from './components/PortfolioSections.jsx';
 
-// JSX uses className for CSS classes; capitalized tags refer to React components.
 export default function App() {
   return (
     <>
-      <ParticleBackground />
-      <main className="parent-container">
-        <Hero />
-        <div className="sub-container">
-          <div className="left-part"><About /><TechStack /></div>
-          <Certifications />
-        </div>
-        <div className="bottom-part"><Socials /><Projects /></div>
-        <hr className="footer-divider" />
+      <a className="skip-link" href="#main">Skip to content</a>
+      <div className="page-shell">
+        <Navigation />
+        <main id="main">
+          <Hero />
+          <Projects />
+          <section className="background-section" id="about" aria-labelledby="about-heading">
+            <About />
+            <div className="background-details"><TechStack /><Certifications /></div>
+          </section>
+          <Socials />
+        </main>
         <Footer />
-      </main>
+      </div>
     </>
   );
 }
