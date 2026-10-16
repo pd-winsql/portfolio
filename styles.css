@@ -58,6 +58,12 @@ a:hover .external-mark { transform: translate(2px, -2px); }
 .skills dl { margin-top: 23px; }
 .skills dl > div { border-bottom: 1px solid var(--rule); padding-block: 16px; display: grid; grid-template-columns: 105px 1fr; gap: 10px; font-size: .9rem; }
 .skills dt { color: var(--muted); }
+.technology-list { display: flex; flex-wrap: wrap; gap: 24px 32px; list-style: none; padding: 0; margin: 24px 0 0; }
+.technology-list li { display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: .85rem; min-width: 72px; }
+.technology-list img { width: 36px; height: 36px; object-fit: contain; }
+.skills dd .technology-list { margin-top: 0; }
+.learning-section { margin-top: 40px; }
+.learning-empty { margin-top: 18px; color: var(--muted); font-size: .88rem; }
 .credentials { margin-top: 40px; }
 .education { font-size: .88rem; margin-top: 21px; color: var(--muted); }
 .credential { margin-top: 16px; font-size: .9rem; }

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { certifications, profile, projects, socials, techStack } from '../data/portfolio.js';
+import { certifications, learningStack, profile, projects, socials, techStack, technologyIcons } from '../data/portfolio.js';
 
 function ExternalLink({ href, children, className = '' }) {
   return <a className={className} href={href} target="_blank" rel="noopener noreferrer">{children}<span className="external-mark" aria-hidden="true">↗</span><span className="sr-only"> (opens in a new tab)</span></a>;
@@ -66,11 +66,35 @@ export function About() {
   );
 }
 
+function TechnologyList({ items }) {
+  return (
+    <ul className="technology-list">
+      {items.map(name => (
+        <li key={name}>
+          {technologyIcons[name] && <img src={technologyIcons[name]} alt="" width="36" height="36" loading="lazy" />}
+          <span>{name}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export function TechStack() {
   return (
     <section className="skills" aria-labelledby="skills-heading">
       <h3 id="skills-heading">Tools I work with</h3>
-      <dl>{techStack.map(({ category, items }) => <div key={category}><dt>{category}</dt><dd>{items.join(' · ')}</dd></div>)}</dl>
+      <TechnologyList items={techStack.flatMap(({ items }) => items)} />
+    </section>
+  );
+}
+
+export function CurrentlyLearning() {
+  return (
+    <section className="skills learning-section" aria-labelledby="learning-heading">
+      <h3 id="learning-heading">Currently learning</h3>
+      {learningStack.length > 0 ? (
+        <dl>{learningStack.map(({ category, items }) => <div key={category}><dt>{category}</dt><dd><TechnologyList items={items} /></dd></div>)}</dl>
+      ) : <p className="learning-empty">Learning tools haven’t been listed yet.</p>}
     </section>
   );
 }
