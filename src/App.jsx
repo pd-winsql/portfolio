@@ -1,4 +1,4 @@
-import { About, Certifications, CurrentlyLearning, Footer, Hero, Navigation, Projects, Socials, TechStack } from './components/PortfolioSections.jsx';
+import { About, Certifications, Footer, Hero, Navigation, Projects, Socials, TechStack } from './components/PortfolioSections.jsx';
 
 export default function App() {
   return (
@@ -11,7 +11,7 @@ export default function App() {
           <Projects />
           <section className="background-section" id="about" aria-labelledby="about-heading">
             <About />
-            <div className="background-details"><TechStack /><CurrentlyLearning /><Certifications /></div>
+            <div className="background-details"><TechStack /><Certifications /></div>
           </section>
           <Socials />
         </main>

@@ -16,8 +16,6 @@ export const technologyIcons = {
     Excel: `${import.meta.env.BASE_URL}assets/excel.svg`,
 };
 
-export const learningStack = [];
-
 export const certifications = [
     {
         title: "Associate Data Analyst",
