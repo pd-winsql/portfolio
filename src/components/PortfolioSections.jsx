@@ -25,7 +25,7 @@ function ExternalLink({ href, children, className = "" }) {
     );
 }
 
-export function Navigation() {
+export function Navigation({ activeTab }) {
     return (
         <header className="site-header">
             <a
@@ -41,15 +41,15 @@ export function Navigation() {
                 />
             </a>
             <nav aria-label="Main navigation">
-                <a href="#work">Work</a>
-                <a href="#about">About</a>
+                <a href={activeTab === 'help' ? '#services' : '#work'}>{activeTab === 'help' ? 'Services' : 'Work'}</a>
+                {activeTab !== 'help' && <a href="#about">About</a>}
                 <a href="#contact">Contact</a>
             </nav>
         </header>
     );
 }
 
-export function Hero() {
+export function Hero({ activeTab }) {
     const [portraitFailed, setPortraitFailed] = useState(false);
     return (
         <section className="hero" id="home" aria-labelledby="name-heading">
@@ -72,12 +72,13 @@ export function Hero() {
                 </div>
                 <div className="hero-bottom">
                     <p>
-                        I’m exploring data through <strong>PostgreSQL</strong>{" "}
-                        and <strong>Power BI</strong>.
+                        I turn data into clear reports with <strong>PostgreSQL</strong>,{" "}
+                        <strong>Power BI</strong>, and <strong>Excel</strong>.
                     </p>
+                    <p>Open to data analyst roles and freelance projects.</p>
                     <div className="hero-actions">
-                        <a className="primary-link" href="#work">
-                            View my work <span aria-hidden="true">↓</span>
+                        <a className="primary-link" href={activeTab === 'help' ? '#services' : '#work'}>
+                            {activeTab === 'help' ? 'See how I can help' : 'View my work'} <span aria-hidden="true">↓</span>
                         </a>
                         <a className="cv-link" href={`${import.meta.env.BASE_URL}documents/winjemelron-corpuz-cv.pdf`} download="Winjemelron-Corpuz-CV.pdf">
                             Download CV <span className="cv-format">(PDF)</span>
@@ -142,10 +143,9 @@ export function About() {
                 make data-driven decisions.
             </p>
             <p>
-                I also development business solutions systems that help
-                organizations make better decisions. I utilizes AI in developing
-                systems making a six months development into one to three months
-                development depending on the scope of the project.
+                I also build business systems and websites with AI-assisted
+                development. I review and test the final work, using sample or
+                synthetic data rather than confidential client information in AI tools.
             </p>
             <p>
                 Away from my projects, I enjoy reading, writing, and exploring
@@ -208,7 +208,7 @@ export function Socials() {
         >
             <div>
                 <h2 id="contact-heading">Let’s connect.</h2>
-                <p>You can find me and my work here.</p>
+                <p>Have a data question, a project in mind, or a role to discuss? Contact me on LinkedIn.</p>
             </div>
             <div className="contact-links">
                 {socials
