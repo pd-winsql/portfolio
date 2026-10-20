@@ -88,6 +88,7 @@ img {
 .page-shell {
     width: min(1120px, calc(100% - 48px));
     margin-inline: auto;
+    animation: page-enter 420ms ease-out both;
 }
 .sr-only {
     position: absolute;
@@ -196,7 +197,7 @@ img {
     align-items: center;
     gap: 24px;
     text-align: center;
-    animation: arrive 0.7s ease-out both;
+    animation: arrive 560ms cubic-bezier(0.22, 1, 0.36, 1) 60ms both;
 }
 .hero-portrait {
     width: 144px;
@@ -287,6 +288,10 @@ h1 {
     gap: clamp(20px, 4vw, 48px);
     border-bottom: 1px solid var(--rule);
     margin-bottom: 40px;
+    animation: arrive 420ms ease-out 120ms both;
+}
+[role="tabpanel"]:not([hidden]) {
+    animation: panel-enter 280ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .portfolio-tabs button {
     border: 0;
@@ -656,6 +661,20 @@ a:hover .external-mark {
     display: inline-flex;
     align-items: center;
     min-height: 44px;
+}
+@keyframes page-enter {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes panel-enter {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 @keyframes arrive {
     from {
