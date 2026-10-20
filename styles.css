@@ -173,6 +173,18 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 12px 24px;
+    width: min(100%, 360px);
+}
+.hero-actions > a {
+    flex: 1 1 150px;
+    min-height: 44px;
+    padding-block: 9px;
+    justify-content: center;
+    border-bottom: 1px solid currentColor;
+    text-decoration: none;
+}
+.hero-actions > a:hover {
+    text-decoration: none;
 }
 .cv-link {
     display: inline-flex;
@@ -180,14 +192,13 @@ h1 {
     gap: 5px;
     min-height: 44px;
     font-size: .88rem;
-    text-decoration: underline;
 }
 .cv-format { color: var(--muted); }
 .primary-link {
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
+    gap: 12px;
     color: var(--accent);
     border-bottom: 1px solid var(--accent);
     padding-block: 9px;
