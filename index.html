@@ -9,6 +9,17 @@
             content="Winjemelron Corpuz: data analysis with PostgreSQL, Power BI, and Excel, plus AI-assisted business systems and websites. Open to roles and freelance projects."
         />
         <meta name="theme-color" content="#f7f5f0" />
+        <script>
+            (() => {
+                let saved;
+                try { saved = localStorage.getItem('portfolio-theme'); } catch {}
+                const theme = saved === 'light' || saved === 'dark'
+                    ? saved
+                    : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                document.documentElement.dataset.theme = theme;
+                document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#171c19' : '#f7f5f0';
+            })();
+        </script>
         <link
             rel="icon"
             type="image/png"

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ThemeToggle } from './ThemeToggle.jsx';
 import {
     certifications,
     profile,
@@ -44,6 +45,7 @@ export function Navigation({ activeTab }) {
                 <a href={activeTab === 'help' ? '#services' : '#work'}>{activeTab === 'help' ? 'Services' : 'Work'}</a>
                 {activeTab !== 'help' && <a href="#about">About</a>}
                 <a href="#contact">Contact</a>
+                <ThemeToggle />
             </nav>
         </header>
     );
