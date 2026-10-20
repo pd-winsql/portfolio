@@ -366,7 +366,8 @@ h1 {
 }
 .service-action {
     display: inline-flex;
-    flex: 1 1 210px;
+    flex: 0 1 auto;
+    max-width: 100%;
     align-items: center;
     justify-content: center;
     min-height: 48px;
