@@ -1,15 +1,44 @@
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Doto:wght@900&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
 
-@property --paper { syntax: "<color>"; inherits: true; initial-value: #f7f5f0; }
-@property --ink { syntax: "<color>"; inherits: true; initial-value: #252b27; }
-@property --muted { syntax: "<color>"; inherits: true; initial-value: #62675f; }
-@property --accent { syntax: "<color>"; inherits: true; initial-value: #345640; }
-@property --rule { syntax: "<color>"; inherits: true; initial-value: #d8dbd1; }
-@property --wash { syntax: "<color>"; inherits: true; initial-value: #ecefe7; }
+@property --paper {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #f7f5f0;
+}
+@property --ink {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #252b27;
+}
+@property --muted {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #62675f;
+}
+@property --accent {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #345640;
+}
+@property --rule {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #d8dbd1;
+}
+@property --wash {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #ecefe7;
+}
 
 :root.theme-transition {
-    transition: --paper 240ms ease, --ink 240ms ease, --muted 240ms ease,
-        --accent 240ms ease, --rule 240ms ease, --wash 240ms ease;
+    transition:
+        --paper 240ms ease,
+        --ink 240ms ease,
+        --muted 240ms ease,
+        --accent 240ms ease,
+        --rule 240ms ease,
+        --wash 240ms ease;
 }
 
 :root {
@@ -176,7 +205,9 @@ img {
     position: absolute;
     width: 22px;
     height: 22px;
-    transition: opacity 240ms ease, transform 300ms ease;
+    transition:
+        opacity 240ms ease,
+        transform 300ms ease;
 }
 .theme-icon-sun {
     opacity: 0;
@@ -220,6 +251,8 @@ img {
     flex-shrink: 0;
 }
 .hero-text {
+    width: 100%;
+    max-width: 700px;
     min-width: 0;
 }
 h1 {
@@ -242,7 +275,7 @@ h1 {
     gap: 14px;
 }
 .hero-bottom p {
-    max-width: 420px;
+    max-width: 100%;
     font-size: 0.94rem;
     color: var(--muted);
 }
@@ -274,9 +307,11 @@ h1 {
     align-items: center;
     gap: 5px;
     min-height: 44px;
-    font-size: .88rem;
+    font-size: 0.88rem;
 }
-.cv-format { color: var(--muted); }
+.cv-format {
+    color: var(--muted);
+}
 .primary-link {
     display: inline-flex;
     align-items: center;
@@ -314,7 +349,9 @@ h1 {
     min-height: 52px;
     padding: 12px 4px;
     cursor: pointer;
-    transition: color 0.18s ease, border-color 0.18s ease;
+    transition:
+        color 0.18s ease,
+        border-color 0.18s ease;
 }
 .portfolio-tabs button[aria-selected="true"] {
     color: var(--accent);
@@ -663,8 +700,12 @@ a:hover .external-mark {
     min-height: 44px;
 }
 @keyframes page-enter {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 @keyframes panel-enter {
     from {
@@ -687,7 +728,9 @@ a:hover .external-mark {
     }
 }
 @media (min-width: 620px) {
-    .hero-actions { justify-content: flex-start; }
+    .hero-actions {
+        justify-content: flex-start;
+    }
     .wordmark img {
         width: 192px;
     }
