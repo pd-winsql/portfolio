@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Doto:wght@900&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
 
 @property --paper { syntax: "<color>"; inherits: true; initial-value: #f7f5f0; }
 @property --ink { syntax: "<color>"; inherits: true; initial-value: #252b27; }
@@ -22,7 +22,8 @@
     --wash: #ecefe7;
     --selection: #cbd8c5;
     --sans: "IBM Plex Sans", "Segoe UI", sans-serif;
-    --mono: "IBM Plex Mono", Consolas, monospace;
+    --display: "Chakra Petch", var(--sans);
+    --pixel: "Doto", var(--sans);
 }
 :root[data-theme="dark"] {
     color-scheme: dark;
@@ -80,6 +81,16 @@ figure,
 dl,
 dd {
     margin: 0;
+}
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
 }
 img {
     max-width: 100%;
@@ -212,11 +223,11 @@ img {
     min-width: 0;
 }
 h1 {
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: clamp(1.65rem, 2.8vw, 2.15rem);
-    line-height: 1.3;
-    letter-spacing: -0.025em;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    letter-spacing: 0;
 }
 .hero-details {
     margin-top: 10px;
@@ -321,11 +332,9 @@ h1 {
     margin-bottom: 48px;
 }
 .services-intro h2 {
-    font-family: var(--sans);
-    font-size: clamp(2rem, 4.5vw, 3.1rem);
-    line-height: 1.15;
+    font-size: clamp(1.85rem, 3.6vw, 2.5rem);
+    line-height: 1.2;
     font-weight: 600;
-    letter-spacing: -0.025em;
 }
 .services-intro > p {
     color: var(--muted);
@@ -340,18 +349,15 @@ h1 {
 .service-index {
     color: var(--accent);
     font-size: 0.82rem;
-    font-family: var(--mono);
+    font-family: var(--sans);
     font-weight: 500;
     margin-bottom: 16px;
 }
 .service-description > h3,
 .development-service > h3,
 .services-next-step h3 {
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: clamp(1.5rem, 2.7vw, 2rem);
+    font-size: clamp(1.4rem, 2.5vw, 1.85rem);
     line-height: 1.25;
-    letter-spacing: -0.02em;
     margin-bottom: 16px;
 }
 .service-description > p:not(.service-index),
@@ -377,7 +383,6 @@ h1 {
 }
 .privacy-note h3 {
     font-size: 1.15rem;
-    font-weight: 600;
     line-height: 1.4;
 }
 .privacy-note p {
@@ -391,14 +396,13 @@ h1 {
     border-top: 1px solid var(--rule);
 }
 .example-label {
-    font-family: var(--mono);
+    font-family: var(--sans);
     font-size: 0.78rem;
     color: var(--muted);
     margin-bottom: 8px;
 }
 .service-example h4 {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.05rem;
     margin-bottom: 10px;
     line-height: 1.4;
 }
@@ -470,11 +474,12 @@ h1 {
 }
 .section-heading h2,
 .about-content > h2 {
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0;
+    line-height: 1.3;
 }
 .section-heading > span {
-    font-family: var(--mono);
+    font-family: var(--sans);
     font-size: 0.78rem;
     color: var(--muted);
     text-align: right;
@@ -489,18 +494,17 @@ h1 {
     align-items: start;
 }
 .project-number {
-    font-family: var(--mono);
+    font-family: var(--pixel);
+    font-weight: 900;
     font-variant-numeric: tabular-nums;
-    font-size: 0.8rem;
-    color: var(--muted);
-    padding-top: 7px;
+    font-size: 1.1rem;
+    line-height: 1.25;
+    color: var(--accent);
+    padding-top: 4px;
 }
 .project-intro h3 {
-    font-family: var(--sans);
-    font-weight: 600;
     line-height: 1.25;
-    font-size: clamp(1.45rem, 2.6vw, 2rem);
-    letter-spacing: -0.02em;
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
     max-width: 570px;
 }
 .project-intro p {
@@ -534,7 +538,7 @@ a:hover .external-mark {
 .about-lead {
     font-family: var(--sans);
     font-weight: 500;
-    font-size: clamp(1.8rem, 3.6vw, 2.5rem);
+    font-size: clamp(1.75rem, 3.2vw, 2.25rem);
     line-height: 1.25;
     letter-spacing: -0.02em;
     margin-top: 24px;
@@ -550,10 +554,8 @@ a:hover .external-mark {
     min-width: 0;
 }
 .background-details h3 {
-    font-weight: 600;
-    font-size: clamp(1.15rem, 1.6vw, 1.3rem);
+    font-size: clamp(1.1rem, 1.6vw, 1.25rem);
     line-height: 1.35;
-    letter-spacing: -0.02em;
 }
 .skills dl {
     margin-top: 23px;
@@ -622,11 +624,9 @@ a:hover .external-mark {
     padding-block: 40px 48px;
 }
 .contact-section h2 {
-    font-family: var(--sans);
     font-weight: 600;
-    font-size: clamp(2rem, 4.5vw, 3.25rem);
-    line-height: 1.15;
-    letter-spacing: -0.025em;
+    font-size: clamp(1.85rem, 3.6vw, 2.5rem);
+    line-height: 1.2;
 }
 .contact-section p {
     margin-top: 13px;
